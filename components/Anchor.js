@@ -1,12 +1,12 @@
-import styled, { css } from 'styled-components'
-import rem from '../utils/rem'
+import styled, { css } from 'styled-components';
+import rem from '../utils/rem';
 
-import LinkIcon from 'react-octicons-svg/dist/LinkIcon'
-import { Header, SubHeader } from './Layout'
-import { mobile } from '../utils/media'
+import LinkIcon from 'react-octicons-svg/dist/LinkIcon';
+import { Header, SubHeader } from './Layout';
+import { mobile } from '../utils/media';
 
 const InvisibleAnchor = styled.div.attrs({
-  'aria-hidden': true
+  'aria-hidden': true,
 })`
   position: relative;
   display: block;
@@ -18,18 +18,18 @@ const InvisibleAnchor = styled.div.attrs({
   ${mobile(css`
     top: ${rem(-90)};
   `)}
-`
+`;
 
 const Anchor = styled.a`
   display: none;
   position: absolute;
   left: 0;
   color: inherit;
-`
+`;
 
 const AnchorIcon = styled(LinkIcon).attrs({
   width: null,
-  height: null
+  height: null,
 })`
   width: ${rem(20)};
   opacity: 0.7;
@@ -38,7 +38,7 @@ const AnchorIcon = styled(LinkIcon).attrs({
   &:hover {
     opacity: 0.9;
   }
-`
+`;
 
 const AnchorHeader = styled(Header)`
   position: relative;
@@ -48,6 +48,7 @@ const AnchorHeader = styled(Header)`
   ${mobile(css`
     margin-left: 0;
 
+    /* stylelint-disable */
     ${Anchor} {
       display: inline-block;
     }
@@ -56,12 +57,12 @@ const AnchorHeader = styled(Header)`
   &:hover ${Anchor} {
     display: inline-block;
   }
-`
+`;
 
-const AnchorSubHeader = AnchorHeader.withComponent(SubHeader)
+const AnchorSubHeader = AnchorHeader.withComponent(SubHeader);
 
 export default ({ children, id, sub }) => {
-  const Child = sub ? AnchorSubHeader : AnchorHeader
+  const Child = sub ? AnchorSubHeader : AnchorHeader;
 
   return (
     <Child>
@@ -73,5 +74,5 @@ export default ({ children, id, sub }) => {
 
       {children}
     </Child>
-  )
-}
+  );
+};

@@ -1,27 +1,29 @@
-import React from 'react'
-import SectionLayout from '../../SectionLayout'
+import React from 'react';
+import SectionLayout from '../../SectionLayout';
 
-import Styled from './styled'
-import TaggedTemplateLiteral from './tagged-template-literal'
-import StyledComponent from './styled-component'
-import ThemeProvider from './theme-provider'
+import Styled from './styled';
+import TaggedTemplateLiteral from './tagged-template-literal';
+import StyledComponent from './styled-component';
+import ThemeProvider from './theme-provider';
 
-const Primary = () => (
+const Primary = () =>
   <SectionLayout title="Primary">
     <Styled />
 
-    <br /><br />
+    <br />
+    <br />
 
     <TaggedTemplateLiteral />
 
-    <br /><br />
+    <br />
+    <br />
 
     <StyledComponent />
 
-    <br /><br />
+    <br />
+    <br />
 
     <ThemeProvider />
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default Primary
+export default Primary;

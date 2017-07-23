@@ -1,9 +1,9 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import Code from '../Code'
+import React from 'react';
+import SectionLayout from '../SectionLayout';
+import LiveEdit from '../LiveEdit';
+import Code from '../Code';
 
-const sample = (`
+const sample = `
 const Example = styled.div\`
   /* all declarations will be prefixed */
   padding: 2em 1em;
@@ -40,25 +40,22 @@ render(
     <p>Hello World!</p>
   </Example>
 );
-`).trim()
+`.trim();
 
-const SupportedCSS = ({ url }) => (
+const SupportedCSS = ({ url }) =>
   <SectionLayout title="Supported CSS">
     <p>
-      Within a styled component, we support all of CSS, including nesting – since we generate an
-      actual stylesheet and not inline styles, whatever works in CSS works in a styled component!
+      Within a styled component, we support all of CSS, including nesting –
+      since we generate an actual stylesheet and not inline styles, whatever
+      works in CSS works in a styled component!
     </p>
 
-    <LiveEdit
-      code={sample}
-      noInline
-    />
+    <LiveEdit code={sample} noInline />
 
     <p>
-      Ampersands (<Code>&</Code>) get replaced by our generated, unique classname for that styled
-      component, making it easy to have complex logic.
+      Ampersands (<Code>&</Code>) get replaced by our generated, unique
+      classname for that styled component, making it easy to have complex logic.
     </p>
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default SupportedCSS
+export default SupportedCSS;

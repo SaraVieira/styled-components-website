@@ -1,12 +1,14 @@
-import React from 'react'
-import Head from 'next/head'
-import Navbar from './Navbar'
-import { Container, Content, Title } from './Layout'
+import React from 'react';
+import Head from 'next/head';
+import Navbar from './Navbar';
+import { Container, Content, Title } from './Layout';
 
-const DocsLayout = ({ children, title }) => (
+const DocsLayout = ({ children, title }) =>
   <Container>
     <Head>
-      <title>styled-components: {title}</title>
+      <title>
+        styled-components: {title}
+      </title>
       <meta name="twitter:title" content={`styled-components: ${title}`} />
     </Head>
 
@@ -19,7 +21,6 @@ const DocsLayout = ({ children, title }) => (
 
       {children}
     </Content>
-  </Container>
-)
+  </Container>;
 
-export default DocsLayout
+export default DocsLayout;

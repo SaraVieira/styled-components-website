@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import { mobile } from '../../utils/media'
+import rem from '../../utils/rem';
+import { mobile } from '../../utils/media';
 
 const Head = styled.div`
   height: ${rem(300)};
@@ -14,7 +14,7 @@ const Head = styled.div`
 
     height: ${rem(70)};
     padding: 0 ${rem(15)};
-  `)}
-`
+  `)};
+`;
 
-export default Head
+export default Head;

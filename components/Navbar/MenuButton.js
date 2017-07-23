@@ -1,9 +1,9 @@
-import styled, { css } from 'styled-components'
-import ThreeBarsIcon from 'react-octicons-svg/dist/ThreeBarsIcon'
+import styled, { css } from 'styled-components';
+import ThreeBarsIcon from 'react-octicons-svg/dist/ThreeBarsIcon';
 
-import rem from '../../utils/rem'
-import { StyledLink } from '../Link'
-import { mobile } from '../../utils/media'
+import rem from '../../utils/rem';
+import { StyledLink } from '../Link';
+import { mobile } from '../../utils/media';
 
 const MenuButton = styled(StyledLink)`
   display: none;
@@ -25,18 +25,16 @@ const MenuButton = styled(StyledLink)`
   &:hover {
     background: none;
   }
-`
+`;
 
 const MenuIcon = styled(ThreeBarsIcon).attrs({
   height: null,
-  width: null
+  width: null,
 })`
   height: ${rem(30)};
-`
+`;
 
-export default props => (
+export default props =>
   <MenuButton {...props}>
     <MenuIcon />
-  </MenuButton>
-)
-
+  </MenuButton>;

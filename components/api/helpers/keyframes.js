@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import SectionLayout from '../../SectionLayout'
-import Table, { Row, Column } from '../../Table'
-import Link from '../../Link'
-import CodeBlock from '../../CodeBlock'
-import Code from '../../Code'
+import SectionLayout from '../../SectionLayout';
+import Table, { Row, Column } from '../../Table';
+import Link from '../../Link';
+import CodeBlock from '../../CodeBlock';
+import Code from '../../Code';
 
-const keyframesSample = (`
+const keyframesSample = `
 import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes\`
@@ -21,42 +21,35 @@ const fadeIn = keyframes\`
 const FadeInButton = styled.button\`
   animation: 1s \${fadeIn} ease-out;
 \`;
-`).trim()
+`.trim();
 
-const Keyframes = () => (
-  <SectionLayout sub title={<Code>keyframes</Code>} labels={[ 'web' ]}>
-    <p>
-      A helper method to create keyframes for animations.
-    </p>
+const Keyframes = () =>
+  <SectionLayout sub title={<Code>keyframes</Code>} labels={['web']}>
+    <p>A helper method to create keyframes for animations.</p>
 
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
         </Column>
-        <Column>
-          A tagged template literal with your keyframes inside.
-        </Column>
+        <Column>A tagged template literal with your keyframes inside.</Column>
       </Row>
     </Table>
 
     <p>
-      Returns a unique name for these keyframes, to be used in your animation declarations.
+      Returns a unique name for these keyframes, to be used in your animation
+      declarations.
     </p>
 
     <CodeBlock code={keyframesSample} language="jsx" />
 
     <p>
       {'You can learn more about styled-components with Animations in the '}
-      <Link
-        inline
-        href="/docs/basics#animations"
-      >
+      <Link inline href="/docs/basics#animations">
         Animations
       </Link>
       {' section.'}
     </p>
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default Keyframes
+export default Keyframes;

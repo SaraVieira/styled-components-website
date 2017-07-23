@@ -1,16 +1,15 @@
-import React from 'react'
-import DocsLayout from '../../components/DocsLayout'
+import React from 'react';
+import DocsLayout from '../../components/DocsLayout';
 
-import Nesting from '../../components/faqs/nesting'
-import ReverseSelectors from '../../components/faqs/reverse-selectors'
-import CSSFrameworks from '../../components/faqs/support-for-css-frameworks'
+import Nesting from '../../components/faqs/nesting';
+import ReverseSelectors from '../../components/faqs/reverse-selectors';
+import CSSFrameworks from '../../components/faqs/support-for-css-frameworks';
 
-const FAQs = () => (
+const FAQs = () =>
   <DocsLayout title="FAQs">
     <Nesting />
     <ReverseSelectors />
     <CSSFrameworks />
-  </DocsLayout>
-)
+  </DocsLayout>;
 
-export default FAQs
+export default FAQs;

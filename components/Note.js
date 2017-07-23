@@ -1,8 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import rem from '../utils/rem'
-import { lightVioletRed, violetRed } from '../utils/colors'
-import { bodyFont, headerFont } from '../utils/fonts'
+import rem from '../utils/rem';
+import { lightVioletRed, violetRed } from '../utils/colors';
+import { bodyFont, headerFont } from '../utils/fonts';
 
 const Note = styled.div`
   font-family: ${bodyFont};
@@ -10,8 +10,8 @@ const Note = styled.div`
   padding: ${rem(7)} ${rem(10)} ${rem(10)} ${rem(14)};
   border-left: ${rem(4)} solid ${violetRed};
   margin: ${rem(45)} 0;
-  border-radius: ${rem(3)}
-`
+  border-radius: ${rem(3)};
+`;
 
 const NoteLabel = styled.strong`
   display: block;
@@ -20,11 +20,12 @@ const NoteLabel = styled.strong`
   text-transform: uppercase;
   font-size: 90%;
   margin-bottom: ${rem(7)};
-`
+`;
 
-export default ({ label = 'Note', children }) => (
+export default ({ label = 'Note', children }) =>
   <Note>
-    <NoteLabel>{label}</NoteLabel>
+    <NoteLabel>
+      {label}
+    </NoteLabel>
     {children}
-  </Note>
-)
+  </Note>;

@@ -1,19 +1,18 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import DocsLayout from '../../components/DocsLayout'
-import { Title, Header } from '../../components/Layout'
-import Link from '../../components/Link'
-import titleToDash from '../../utils/titleToDash'
-import { pages } from '../docs.json'
-import { mobile, phone } from '../../utils/media'
-import { headerFont } from '../../utils/fonts'
+import rem from '../../utils/rem';
+import DocsLayout from '../../components/DocsLayout';
+import { Title, Header } from '../../components/Layout';
+import Link from '../../components/Link';
+import titleToDash from '../../utils/titleToDash';
+import { pages } from '../docs.json';
+import { mobile, phone } from '../../utils/media';
+import { headerFont } from '../../utils/fonts';
 
 const Row = styled.div`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-`
+  flex-flow: rwo wrap;
+`;
 
 const Column = styled.div`
   width: 33%;
@@ -25,14 +24,12 @@ const Column = styled.div`
     width: 50%;
     max-width: 50%;
     flex-basis: 50%;
-  `)}
-
-  ${phone(css`
+  `)} ${phone(css`
     width: 100%;
     max-width: 100%;
     flex-basis: 100%;
-  `)}
-`
+  `)};
+`;
 
 const SubHeader = styled.h3`
   display: block;
@@ -40,38 +37,37 @@ const SubHeader = styled.h3`
   font-size: ${rem(18)};
   font-weight: normal;
   font-family: ${headerFont};
-`
+`;
 
-const Documentation = () => (
+const Documentation = () =>
   <DocsLayout title="Documentation">
     <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
+      Utilising tagged template literals (a recent addition to JavaScript) and
+      the power of CSS, styled-components allows you to write actual CSS code to
+      style your components. It also removes the mapping between components and
+      styles – using components as a low-level styling construct could not be
+      easier!
     </p>
 
     <Row>
-      {
-        pages.map(({ title, pathname, sections }) => (
-          <Column key={title}>
-            <Header>
-              <Link href={`/docs/${pathname}`}>
+      {pages.map(({ title, pathname, sections }) =>
+        <Column key={title}>
+          <Header>
+            <Link href={`/docs/${pathname}`}>
+              {title}
+            </Link>
+          </Header>
+
+          {sections.map(({ title }) =>
+            <SubHeader key={title}>
+              <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
                 {title}
               </Link>
-            </Header>
-
-            {
-              sections.map(({ title }) => (
-                <SubHeader key={title}>
-                  <Link href={`/docs/${pathname}#${titleToDash(title)}`}>
-                    {title}
-                  </Link>
-                </SubHeader>
-              ))
-            }
-          </Column>
-        ))
-      }
+            </SubHeader>
+          )}
+        </Column>
+      )}
     </Row>
-  </DocsLayout>
-)
+  </DocsLayout>;
 
-export default Documentation
+export default Documentation;

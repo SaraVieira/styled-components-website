@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import { mobile } from '../../utils/media'
+import rem from '../../utils/rem';
+import { mobile } from '../../utils/media';
 
 const Text = styled.div`
   display: none;
@@ -11,7 +11,7 @@ const Text = styled.div`
 
   ${mobile(css`
     display: block;
-  `)}
-`
+  `)};
+`;
 
-export default Text
+export default Text;

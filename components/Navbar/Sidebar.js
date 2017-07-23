@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import { mobile } from '../../utils/media'
-import { violetRed, gold } from '../../utils/colors'
-import { headerFont } from '../../utils/fonts'
-import captureScroll from '../CaptureScroll'
+import rem from '../../utils/rem';
+import { mobile } from '../../utils/media';
+import { violetRed, gold } from '../../utils/colors';
+import { headerFont } from '../../utils/fonts';
+import captureScroll from '../CaptureScroll';
 
 const Sidebar = styled.nav`
   position: fixed;
@@ -31,7 +31,7 @@ const Sidebar = styled.nav`
     height: auto;
     width: 100%;
     overflow-y: visible;
-  `)}
-`
+  `)};
+`;
 
-export default captureScroll(Sidebar)
+export default captureScroll(Sidebar);

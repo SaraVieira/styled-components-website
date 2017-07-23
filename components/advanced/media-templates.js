@@ -1,9 +1,9 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import Code from '../Code'
+import React from 'react';
+import SectionLayout from '../SectionLayout';
+import LiveEdit from '../LiveEdit';
+import Code from '../Code';
 
-const sample = (`
+const sample = `
 const Content = styled.div\`
   background: papayawhip;
   height: 3em;
@@ -17,9 +17,9 @@ const Content = styled.div\`
 render(
   <Content />
 );
-`).trim()
+`.trim();
 
-const templateSample = (`
+const templateSample = `
 const sizes = {
   desktop: 992,
   tablet: 768,
@@ -51,39 +51,35 @@ const Content = styled.div\`
 render(
   <Content />
 );
-`).trim()
+`.trim();
 
-const MediaTemplates = () => (
+const MediaTemplates = () =>
   <SectionLayout title="Media Templates">
     <p>
-      Media queries are an indispensable tool when developing responsive web apps.
+      Media queries are an indispensable tool when developing responsive web
+      apps.
     </p>
 
     <p>
-      This is a very simple example. It shows a basic component changing its background colour,
-      once the screen's width drops below a threshold of <Code>700px</Code>.
+      This is a very simple example. It shows a basic component changing its
+      background colour, once the screen's width drops below a threshold of{' '}
+      <Code>700px</Code>.
     </p>
 
-    <LiveEdit
-      code={sample}
-      noInline
-    />
+    <LiveEdit code={sample} noInline />
 
     <p>
-      Since media queries are long and are often repeated throughout an application, it can be
-      useful to create a template for them.
+      Since media queries are long and are often repeated throughout an
+      application, it can be useful to create a template for them.
     </p>
 
     <p>
-      Due to the functional nature of JavaScript, you can easily define your own tagged template
-      literal to wrap styles in media queries. Let's rewrite the last example to try just that out.
+      Due to the functional nature of JavaScript, you can easily define your own
+      tagged template literal to wrap styles in media queries. Let's rewrite the
+      last example to try just that out.
     </p>
 
-    <LiveEdit
-      code={templateSample}
-      noInline
-    />
-  </SectionLayout>
-)
+    <LiveEdit code={templateSample} noInline />
+  </SectionLayout>;
 
-export default MediaTemplates
+export default MediaTemplates;

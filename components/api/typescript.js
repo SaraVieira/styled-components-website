@@ -1,18 +1,18 @@
-import React from 'react'
-import SectionLayout from '../SectionLayout'
-import { InlineLink } from '../Link'
-import CodeBlock from '../CodeBlock'
-import Code from '../Code'
+import React from 'react';
+import SectionLayout from '../SectionLayout';
+import { InlineLink } from '../Link';
+import CodeBlock from '../CodeBlock';
+import Code from '../Code';
 
-const theme = (`
+const theme = `
 // theme.ts
 export default interface ThemeInterface {
   primaryColor: string;
   primaryColorInverted: string;
 }
-`).trim()
+`.trim();
 
-const styledComponents = (`
+const styledComponents = `
 // styled-components.ts
 import * as styledComponents from 'styled-components';
 import { ThemedStyledComponentsModule } from 'styled-components';
@@ -29,9 +29,9 @@ const {
 
 export { css, injectGlobal, keyframes, ThemeProvider };
 export default styled;
-`).trim()
+`.trim();
 
-const propsClassName = (`
+const propsClassName = `
 interface LogoProps {
   /* This prop is optional, since TypeScript won't know that it's passed by the wrapper */
   className?: string;
@@ -52,9 +52,9 @@ const LogoStyled = styled(Logo)\`
   font-weight: bold;
   font-size: 1.8rem;
 \`;
-`).trim()
+`.trim();
 
-const statelessComponent = (`
+const statelessComponent = `
 interface BoxProps {
   theme?: ThemeInterface;
   borders?: boolean;
@@ -70,12 +70,13 @@ const Box: React.StatelessComponent<BoxProps> = props => (
 const StyledBox = styled(Box)\`
   padding: \${props => props.theme.lateralPadding};
 \`;
-`).trim()
+`.trim();
 
-const TypeScript = () => (
+const TypeScript = () =>
   <SectionLayout title="TypeScript">
     <p>
-      styled-components has TypeScript definitions to allow the library to be used in any TypeScript project.
+      styled-components has TypeScript definitions to allow the library to be
+      used in any TypeScript project.
       <br />
       {'A basic example can be found '}
       <InlineLink href="https://github.com/patrick91/Styled-Components-Typescript-Example">
@@ -86,33 +87,36 @@ const TypeScript = () => (
 
     <SectionLayout sub title="Define a theme interface">
       <p>
-        By default every styled component will have the <Code>theme</Code> prop set to <Code>any</Code>.
-        When building complex apps it would be better to have autocomplete and error checks everywhere.
+        By default every styled component will have the <Code>theme</Code> prop
+        set to <Code>any</Code>. When building complex apps it would be better
+        to have autocomplete and error checks everywhere.
       </p>
 
       <p>
-        To have autocomplete and checks around the <Code>theme</Code> prop we should first define the theme
-        interface we would like to use throughout our app:
+        To have autocomplete and checks around the <Code>theme</Code> prop we
+        should first define the theme interface we would like to use throughout
+        our app:
       </p>
 
       <CodeBlock code={theme} language="jsx" />
 
       <p>
-        Then we can re-export the <Code>styled</Code> function with our custom theme interface:
+        Then we can re-export the <Code>styled</Code> function with our custom
+        theme interface:
       </p>
 
       <CodeBlock code={styledComponents} language="jsx" />
 
       <p>
-        Finally, instead of importing the styled functions from the styled-components module,
-        we import it from our above, custom module.
+        Finally, instead of importing the styled functions from the
+        styled-components module, we import it from our above, custom module.
       </p>
     </SectionLayout>
 
-    <SectionLayout sub title={[ 'Caveat with ', <Code>className</Code> ]}>
+    <SectionLayout sub title={['Caveat with ', <Code>className</Code>]}>
       <p>
-        When defining a component you will need to mark <Code>className</Code> as optional
-        in your Props interface:
+        When defining a component you will need to mark <Code>className</Code>{' '}
+        as optional in your Props interface:
       </p>
 
       <CodeBlock code={propsClassName} language="jsx" />
@@ -120,13 +124,12 @@ const TypeScript = () => (
 
     <SectionLayout sub title="Caveat with Stateless Components">
       <p>
-        To use stateless components and have typechecking for the props you'll need to define
-        the component alongside with its type, like this:
+        To use stateless components and have typechecking for the props you'll
+        need to define the component alongside with its type, like this:
       </p>
 
       <CodeBlock code={statelessComponent} language="jsx" />
     </SectionLayout>
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default TypeScript
+export default TypeScript;

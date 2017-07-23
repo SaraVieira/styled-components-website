@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import rem from '../utils/rem'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import rem from '../utils/rem';
 
-import '../utils/prismTemplateString'
-import { darkGrey } from '../utils/colors'
-import { monospace } from '../utils/fonts'
+import '../utils/prismTemplateString';
+import { darkGrey } from '../utils/colors';
+import { monospace } from '../utils/fonts';
 
 const prism = (code, language) => {
   if (!language || !Prism.languages[language]) {
-    return undefined
+    return undefined;
   }
 
-  return Prism.highlight(code, Prism.languages[language])
-}
+  return Prism.highlight(code, Prism.languages[language]);
+};
 
 const Highlight = styled.pre.attrs({
-  className: 'prism-code'
+  className: 'prism-code',
 })`
   background: ${darkGrey};
   font-size: 0.8rem;
@@ -28,35 +28,31 @@ const Highlight = styled.pre.attrs({
   margin: ${rem(35)} 0;
 
   overflow-x: hidden;
-`
+`;
 
 class CodeBlock extends Component {
   state = {
-    __html: prism(this.props.code, this.props.language)
-  }
+    __html: prism(this.props.code, this.props.language),
+  };
 
   componentWillReceiveProps({ code, language }) {
     if (code !== this.props.code || language !== this.props.language) {
       this.setState({
-        __html: prism(code, language)
-      })
+        __html: prism(code, language),
+      });
     }
   }
 
   render() {
-    const { code } = this.props
-    const { __html } = this.state
+    const { code } = this.props;
+    const { __html } = this.state;
 
     if (!__html) {
       return (
-        <Highlight
-          {...this.props}
-          code={undefined}
-          language={undefined}
-        >
+        <Highlight {...this.props} code={undefined} language={undefined}>
           {code}
         </Highlight>
-      )
+      );
     }
 
     return (
@@ -66,8 +62,8 @@ class CodeBlock extends Component {
         code={undefined}
         language={undefined}
       />
-    )
+    );
   }
 }
 
-export default CodeBlock
+export default CodeBlock;

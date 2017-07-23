@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-import rem from '../../utils/rem'
-import { mobile } from '../../utils/media'
+import rem from '../../utils/rem';
+import { mobile } from '../../utils/media';
 
 const Logo = styled.div`
   display: inline-block;
@@ -19,7 +19,7 @@ const Logo = styled.div`
     background-position: center;
     width: ${rem(70)};
     height: ${rem(70)};
-  `)}
-`
+  `)};
+`;
 
-export default Logo
+export default Logo;

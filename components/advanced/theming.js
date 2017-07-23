@@ -1,12 +1,12 @@
-import React from 'react'
-import { withTheme, ThemeProvider } from 'styled-components'
+import React from 'react';
+import { withTheme, ThemeProvider } from 'styled-components';
 
-import SectionLayout from '../SectionLayout'
-import LiveEdit from '../LiveEdit'
-import CodeBlock from '../CodeBlock'
-import Code from '../Code'
+import SectionLayout from '../SectionLayout';
+import LiveEdit from '../LiveEdit';
+import CodeBlock from '../CodeBlock';
+import Code from '../Code';
 
-const sample = (`
+const sample = `
 // Define our button, but with the use of props.theme this time
 const Button = styled.button\`
   font-size: 1em;
@@ -40,9 +40,9 @@ render(
     </ThemeProvider>
   </div>
 );
-`).trim()
+`.trim();
 
-const functionSample = (`
+const functionSample = `
 // Define our button, but with the use of props.theme this time
 const Button = styled.button\`
   color: \${props => props.theme.fg};
@@ -78,9 +78,9 @@ render(
     </div>
   </ThemeProvider>
 );
-`).trim()
+`.trim();
 
-const withThemeSample = (`
+const withThemeSample = `
 import { withTheme } from 'styled-components'
 
 class MyComponent extends React.Component {
@@ -91,56 +91,54 @@ class MyComponent extends React.Component {
 }
 
 export default withTheme(MyComponent)
-`).trim()
+`.trim();
 
-const scope = { withTheme, ThemeProvider }
+const scope = { withTheme, ThemeProvider };
 
-const Theming = () => (
+const Theming = () =>
   <SectionLayout title="Theming">
     <p>
-      styled-components has full theming support by exporting a <Code>&lt;ThemeProvider&gt;</Code> wrapper component.
-      This component provides a theme to all React components underneath itself via the context API. In the render
-      tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
+      styled-components has full theming support by exporting a{' '}
+      <Code>&lt;ThemeProvider&gt;</Code> wrapper component. This component
+      provides a theme to all React components underneath itself via the context
+      API. In the render tree all styled-components will have access to the
+      provided theme, even when they are multiple levels deep.
     </p>
 
     <p>
-      To illustrate this, let's create our Button component, but this time we'll pass some variables down
-      as a theme.
+      To illustrate this, let's create our Button component, but this time we'll
+      pass some variables down as a theme.
     </p>
 
-    <LiveEdit
-      code={sample}
-      scope={scope}
-      noInline
-    />
+    <LiveEdit code={sample} scope={scope} noInline />
 
     <SectionLayout sub title="Function themes">
       <p>
-        You can also pass a function for the theme prop. This function will receive the parent theme, that is from
-        another <Code>&lt;ThemeProvider&gt;</Code> higher up the tree. This way themes themselves can be made contextual.
+        You can also pass a function for the theme prop. This function will
+        receive the parent theme, that is from another{' '}
+        <Code>&lt;ThemeProvider&gt;</Code> higher up the tree. This way themes
+        themselves can be made contextual.
       </p>
 
       <p>
-        This example renders our above themed Button and a second one that uses a second ThemeProvider to invert the
-        background and foreground colours. The function <Code>invertTheme</Code> receives the upper theme and creates a new one.
+        This example renders our above themed Button and a second one that uses
+        a second ThemeProvider to invert the background and foreground colours.
+        The function <Code>invertTheme</Code> receives the upper theme and
+        creates a new one.
       </p>
 
-      <LiveEdit
-        code={functionSample}
-        scope={scope}
-        noInline
-      />
+      <LiveEdit code={functionSample} scope={scope} noInline />
     </SectionLayout>
 
     <SectionLayout sub title="Getting the theme without styled components">
       <p>
-        If you ever need to use the current theme outside styled components (e.g. inside big components), you can use
-        the <Code>withTheme</Code> higher order component.
+        If you ever need to use the current theme outside styled components
+        (e.g. inside big components), you can use the <Code>withTheme</Code>{' '}
+        higher order component.
       </p>
 
       <CodeBlock code={withThemeSample} language="jsx" />
     </SectionLayout>
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default Theming
+export default Theming;

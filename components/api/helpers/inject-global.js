@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-import SectionLayout from '../../SectionLayout'
-import Table, { Row, Column } from '../../Table'
-import CodeBlock from '../../CodeBlock'
-import Code from '../../Code'
+import SectionLayout from '../../SectionLayout';
+import Table, { Row, Column } from '../../Table';
+import CodeBlock from '../../CodeBlock';
+import Code from '../../Code';
 
-const injectGlobalSample = (`
+const injectGlobalSample = `
 import { injectGlobal } from 'styled-components';
 
 injectGlobal\`
@@ -18,16 +18,20 @@ injectGlobal\`
     margin: 0;
   }
 \`;
-`).trim()
+`.trim();
 
-const InjectGlobal = () => (
-  <SectionLayout sub title={<Code>injectGlobal</Code>} labels={[ 'web', 'native' ]}>
+const InjectGlobal = () =>
+  <SectionLayout
+    sub
+    title={<Code>injectGlobal</Code>}
+    labels={['web', 'native']}
+  >
     <p>
-      A helper method to write global CSS. It does not return a component, but adds the styles to
-      the stylesheet directly.
+      A helper method to write global CSS. It does not return a component, but
+      adds the styles to the stylesheet directly.
     </p>
 
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={['Arguments', 'Description']}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
@@ -41,11 +45,10 @@ const InjectGlobal = () => (
     <CodeBlock code={injectGlobalSample} language="jsx" />
 
     <p>
-      We do not encourage the use of this. Try to use it once per app at most, if you
-      must, contained in a single file. This is an escape hatch. Only use it for the
-      rare <Code>@font-face</Code> definition or body styling.
+      We do not encourage the use of this. Try to use it once per app at most,
+      if you must, contained in a single file. This is an escape hatch. Only use
+      it for the rare <Code>@font-face</Code> definition or body styling.
     </p>
-  </SectionLayout>
-)
+  </SectionLayout>;
 
-export default InjectGlobal
+export default InjectGlobal;

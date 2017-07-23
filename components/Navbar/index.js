@@ -1,35 +1,35 @@
-import React, { Component } from 'react'
-import Sidebar from './Sidebar'
-import Head from './Head'
-import Logo from './Logo'
-import Text from './Text'
-import Menu from './Menu'
-import MenuButton from './MenuButton'
-import Link from '../Link'
+import React, { Component } from 'react';
+import Sidebar from './Sidebar';
+import Head from './Head';
+import Logo from './Logo';
+import Text from './Text';
+import Menu from './Menu';
+import MenuButton from './MenuButton';
+import Link from '../Link';
 
 class Navbar extends Component {
   state = {
-    isFolded: true
-  }
+    isFolded: true,
+  };
 
   onFold = () => {
-    let isFolded = !this.state.isFolded
-    if(!isFolded) {
-      document.body.classList.add('sticky')
+    let isFolded = !this.state.isFolded;
+    if (!isFolded) {
+      document.body.classList.add('sticky');
     } else {
-      document.body.classList.remove('sticky')
+      document.body.classList.remove('sticky');
     }
     this.setState({
-      isFolded: isFolded
-    })
-  }
+      isFolded: isFolded,
+    });
+  };
 
   onRouteChange = () => {
-    this.setState({ isFolded: true })
-  }
+    this.setState({ isFolded: true });
+  };
 
   render() {
-    const { isFolded } = this.state
+    const { isFolded } = this.state;
 
     return (
       <Sidebar>
@@ -47,13 +47,10 @@ class Navbar extends Component {
           <MenuButton onClick={this.onFold} />
         </Head>
 
-        <Menu
-          isFolded={isFolded}
-          onRouteChange={this.onRouteChange}
-        />
+        <Menu isFolded={isFolded} onRouteChange={this.onRouteChange} />
       </Sidebar>
-    )
+    );
   }
 }
 
-export default Navbar
+export default Navbar;
